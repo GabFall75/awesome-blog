@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="it">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>{% block head_title %}My Django Blog{% endblock head_title %}</title>
+    <!--Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"/>
+    <!--MydjangoBlog CSS -->
+    <link rel="stylesheet" href="{% static 'css/mydjangoblog.css' %}"/>
+</head>
+
+<body>
+<!--<nav class="navbar navbar-expand-lg navbar-light bg-light">-->
+<nav class="navbar fixed-top navbar-light bg-light">
+    <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">MyDjangoBlog</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+        <div class ="hidden-xs">
+                <div class="navbar-header pull-right">
+                    <img alt="logo python" src="{% static 'img/logo.png'%}"/>
+                </div>
+            </div>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+<!--            <li class="nav-item active">-->
+<!--                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>-->
+<!--            </li>-->
+<!--            <li class="nav-item">-->
+<!--                <a class="nav-link" href="/contatti">Contatti</a>-->
+<!--            </li>-->
+            <li class="{% if request.path_info == '/' %} active{% endif %}">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="{% if request.path_info == '/contatti/' %} active{% endif %}">
+                <a class="nav-link" href="/contatti">Contatti</a>
+            </li>
+        </ul>
+      </div>
+
+    </div>
+
+</nav>
+
+
+    <div class="container contenuto" >
+        <div class="row">
+            <div class="col-md-8">
+            {% block content %}
+
+            {% endblock content %}
+            </div><!--"col-sm-8" -->
+            <div class="col-md-3-offset-1">
+                <center>
+                    <h4>My Django Blog</h4>
+                    <h5>Creato da me</h5>
+                    <p>Powered by <a href="">Django<a/> &  <a href="">Bootstrap</a><p/>
+                </center>
+            </div><!--"col-sm-3-offset-1" -->
+        </div><!--"row" -->
+    </div> <!--"container contenuto" -->
+    <footer>
+        <div class="container-fluid">
+         <p style="color:white; font-weight:bold">Canali Social:</p>
+            <a href="#"> Torna su</a><br>
+        </div>
+    </footer>
+    <!--CDN jQuery -->
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous">
+  </script>
+
+<!--Latest compiled and minified JavaScript -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
+
+

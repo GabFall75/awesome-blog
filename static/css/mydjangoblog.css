@@ -1,0 +1,23 @@
+h1 {color: green}
+h2 {color: red}
+
+html, body {
+    padding-top: 40px;
+    height:100%;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    }
+
+.contenuto{
+   min-height: 93%;
+   padding-bottom: 40px;
+}
+
+footer{ padding: 20px;
+        background-color: #092E20;
+        text-align: center;
+        }
